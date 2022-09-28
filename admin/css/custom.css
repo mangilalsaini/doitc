@@ -1,0 +1,5 @@
+.bg-login-image{
+    background:url('../images/login.jpg') no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
