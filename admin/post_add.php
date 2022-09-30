@@ -7,15 +7,16 @@
         $posttitle      = $_POST['title'];
         $postcontent    = $_POST['content'];
         $postcategory   = $_POST['category'];
-        $postimage      = "";//$_POST['password'];
+        $postimage      = $_FILES['image']['name'];
         $postauthor     = $_SESSION['userfullname'];
         $datecreated    = date("Y-m-d H:i:s");
-        
+
         if(!empty($posttitle) && !empty($postcontent)){
             $query = "INSERT INTO posts (title, content, category, image, author, datecreated) VALUES ";
             $query .= "('$posttitle', '$postcontent', '$postcategory', '$postimage', '$postauthor', '$datecreated')";
             $result = mysqli_query($conn, $query);
             $_SESSION['post_addition'] = true;
+            move_uploaded_file($_FILES['image']['tmp_name'], "../assets/images/$postimage");
         }
         else{
             $_SESSION['post_addition'] = false;
@@ -66,7 +67,7 @@
                             ?>
                         </div>
                         <div class="card-body">
-                            <form action="post_add.php" method="POST">
+                            <form action="post_add.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="title">Title</label>
@@ -97,7 +98,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="image" class="form-label">Seelct image</label>
-                                        <input class="form-control" type="file" id="image" name="image">
+                                        <input type="file" class="form-control" id="image" name="image">
                                     </div>
                                 </div>
                                 <div class="form-row">
