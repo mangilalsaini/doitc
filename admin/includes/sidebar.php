@@ -44,6 +44,24 @@
     </div>
 </li>
 
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postmanagemant"
+        aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa-solid fa-list"></i>
+        <span>Posts</span>
+    </a>
+    <div id="postmanagemant" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Managing Posts:</h6>
+            <a class="collapse-item" href="post_all.php">All Posts</a>
+            <a class="collapse-item" href="post_add.php">Create Post</a>
+            <a class="collapse-item" href="post_all.php">Edit Post</a>
+            <a class="collapse-item" href="post_all.php">Delete Post</a>
+        </div>
+    </div>
+</li>
+
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -81,9 +99,9 @@
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+            <a class="collapse-item" href="../login.php">Login</a>
+            <a class="collapse-item" href="register.php">Register</a>
+            <a class="collapse-item" href="forgot-password.php">Forgot Password</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
             <a class="collapse-item" href="404.html">404 Page</a>

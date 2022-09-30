@@ -100,16 +100,16 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">post count</label>
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">post count
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
                                                         <?php
-                                                            $query = "SELECT * FROM `users` WHERE `active`=0;";
+                                                            $query = "SELECT * FROM `posts` WHERE 1;";
                                                             $result = mysqli_query($conn, $query);
-                                                            $user_inactive = mysqli_num_rows($result);
-                                                            echo $user_inactive;                                                            
+                                                            $posts = mysqli_num_rows($result);
+                                                            echo $posts;                                                            
                                                         ?>   
                                                     </div>
                                                 </div>                                                
@@ -131,7 +131,14 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                                 categories count</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <?php
+                                                    $query = "SELECT * FROM `categories` WHERE 1";
+                                                    $result = mysqli_query($conn, $query);
+                                                    $categories = mysqli_num_rows($result);
+                                                    echo $categories;                                                            
+                                                ?>
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-clipboard-list fa-2x"></i>                                            
